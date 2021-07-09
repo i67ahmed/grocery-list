@@ -9,13 +9,27 @@ export class GroceryListComponent implements OnInit {
 
   task = " ";
   tasks : string[] = [];
+  index: number = this.tasks.indexOf(this.task);
   
   onClick(){
     this.tasks.push(this.task);
     this.task = " ";
 }
 
-  ngOnInit(): void {
+  onDelete(task : string){
+    for(var i = 0;i < this.tasks.length; i++){
+      if(task == this.tasks[i]){
+          this.tasks.splice(i,1);
+          break;
+      }
+  }    
   }
 
+  onEdit(){
+
+  }
+
+  ngOnInit(): void {
+    
+  }
 }
