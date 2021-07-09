@@ -25,8 +25,12 @@ export class GroceryListComponent implements OnInit {
   }    
   }
 
-  onEdit(){
-
+  onEdit(task : string){
+    for (var i = 0; i < this.tasks.length; i++){
+      if (task == this.tasks[i]){
+      this.tasks[i].strike;
+      }
+    }
   }
 
   ngOnInit(): void {
