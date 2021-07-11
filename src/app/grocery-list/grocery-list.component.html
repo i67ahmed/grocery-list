@@ -1,12 +1,14 @@
-<div>
+<div style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
   <h2> Grocery list manager </h2>
+  <img src="assets\grocery_list.jpg"/>
+  
 
   <div class="row">
       <div class="col-xs-6 col-md-4">
           <div class="input-group">
-              <input type="text" class="form-control" placeholder="enter grocery items" id="txtSearch" [(ngModel)]="task"/>
+              <input type="text" class="form-control" placeholder="enter grocery items" aria-label="enter grocery items" id="txtSearch" [(ngModel)]="task"/>
               <div class="input-group-btn">
-                <button class="btn btn-primary" type="button" (click)="onClick()">
+                <button class="btn btn-primary" type="button" (click)="onClick()" style="margin-left: 5px;">
                   Add Item
                </button>
               </div>
@@ -19,13 +21,12 @@
   <ul class="list-group">
     <li *ngFor="let task of tasks" class="list-group-item">
         <span> {{ task }} </span>
-        <button class="btn btn-primary" type="button" (click)="onDelete(task)">
-            Delete
-         </button>
-         <button class="btn btn-primary" type="button" (click)="onEdit(task)">
+        <button class="btn btn-primary" type="button" (click)="onEdit(task)" style="margin-left: 5px;">
             Check off
          </button>
-
+        <button class="btn btn-primary" type="button" (click)="onDelete(task)" style="margin-left: 5px;">
+            Delete
+         </button>
     </li>
 </ul>
 
